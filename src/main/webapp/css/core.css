@@ -1,0 +1,63 @@
+#logo {
+  height: 30px;
+}
+
+p,h4, label {
+  margin-bottom: 0;
+}
+
+.input-break {
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  margin: 5px 0;
+  width: 100%;
+}
+
+span {
+  margin-left: 20px;
+}
+
+body {
+  position: relative;
+  background-color: #7D0037;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+#wrapper {
+  padding-bottom: 90px;
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-body {
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.btn-save-client {
+  width: 250px;
+}
+
+.color-primary {
+  color: white;
+  background-color: #7D0037;
+}
+
+.color-primary:hover {
+  color: white;
+  background-color: #280000;
+}
