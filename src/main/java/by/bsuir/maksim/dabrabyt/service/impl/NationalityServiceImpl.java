@@ -1,7 +1,7 @@
 package by.bsuir.maksim.dabrabyt.service.impl;
 
-import by.bsuir.maksim.dabrabyt.dao.NationalityDao;
 import by.bsuir.maksim.dabrabyt.dao.DaoProvider;
+import by.bsuir.maksim.dabrabyt.dao.NationalityDao;
 import by.bsuir.maksim.dabrabyt.dao.exception.DaoException;
 import by.bsuir.maksim.dabrabyt.dao.model.entity.Nationality;
 import by.bsuir.maksim.dabrabyt.service.NationalityService;

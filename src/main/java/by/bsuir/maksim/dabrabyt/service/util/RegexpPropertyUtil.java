@@ -1,6 +1,5 @@
 package by.bsuir.maksim.dabrabyt.service.util;
 
-import by.bsuir.maksim.dabrabyt.service.util.validator.ClientValidator;
 import lombok.Getter;
 
 import java.util.Locale;

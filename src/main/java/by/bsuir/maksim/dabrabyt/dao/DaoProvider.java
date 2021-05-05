@@ -1,7 +1,6 @@
 package by.bsuir.maksim.dabrabyt.dao;
 
 import by.bsuir.maksim.dabrabyt.dao.impl.*;
-import by.bsuir.maksim.dabrabyt.dao.model.entity.Disability;
 import lombok.Getter;
 
 public class DaoProvider {

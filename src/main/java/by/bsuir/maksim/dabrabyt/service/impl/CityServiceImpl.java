@@ -1,15 +1,11 @@
 package by.bsuir.maksim.dabrabyt.service.impl;
 
 import by.bsuir.maksim.dabrabyt.dao.CityDao;
-import by.bsuir.maksim.dabrabyt.dao.ClientDao;
 import by.bsuir.maksim.dabrabyt.dao.DaoProvider;
 import by.bsuir.maksim.dabrabyt.dao.exception.DaoException;
 import by.bsuir.maksim.dabrabyt.dao.model.entity.City;
-import by.bsuir.maksim.dabrabyt.dao.model.entity.Client;
 import by.bsuir.maksim.dabrabyt.service.CityService;
-import by.bsuir.maksim.dabrabyt.service.ClientService;
 import by.bsuir.maksim.dabrabyt.service.exception.ServiceException;
-import by.bsuir.maksim.dabrabyt.service.util.validator.ClientValidator;
 import lombok.Getter;
 
 import java.util.List;

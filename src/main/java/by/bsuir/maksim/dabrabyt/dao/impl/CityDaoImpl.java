@@ -4,10 +4,13 @@ import by.bsuir.maksim.dabrabyt.dao.CityDao;
 import by.bsuir.maksim.dabrabyt.dao.connection.ConnectionPool;
 import by.bsuir.maksim.dabrabyt.dao.connection.impl.ConnectionPoolImpl;
 import by.bsuir.maksim.dabrabyt.dao.exception.DaoException;
-import by.bsuir.maksim.dabrabyt.dao.model.entity.*;
+import by.bsuir.maksim.dabrabyt.dao.model.entity.City;
 import lombok.Getter;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

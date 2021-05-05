@@ -1,6 +1,5 @@
 package by.bsuir.maksim.dabrabyt.controller.command.impl;
 
-import by.bsuir.maksim.dabrabyt.controller.command.util.CommandProvider;
 import by.bsuir.maksim.dabrabyt.controller.command.Command;
 import by.bsuir.maksim.dabrabyt.controller.util.RequestClientParser;
 import by.bsuir.maksim.dabrabyt.dao.model.entity.Client;

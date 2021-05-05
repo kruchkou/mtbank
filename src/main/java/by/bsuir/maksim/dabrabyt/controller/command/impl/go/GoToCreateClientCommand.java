@@ -1,7 +1,6 @@
 package by.bsuir.maksim.dabrabyt.controller.command.impl.go;
 
 import by.bsuir.maksim.dabrabyt.controller.command.Command;
-import by.bsuir.maksim.dabrabyt.dao.model.entity.Sex;
 import by.bsuir.maksim.dabrabyt.service.*;
 import by.bsuir.maksim.dabrabyt.service.exception.ServiceException;
 import by.bsuir.maksim.dabrabyt.service.util.RegexpPropertyUtil;

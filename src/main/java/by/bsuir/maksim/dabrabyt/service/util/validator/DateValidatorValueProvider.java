@@ -1,7 +1,5 @@
 package by.bsuir.maksim.dabrabyt.service.util.validator;
 
-import lombok.Getter;
-
 import java.time.LocalDate;
 
 public final class DateValidatorValueProvider {

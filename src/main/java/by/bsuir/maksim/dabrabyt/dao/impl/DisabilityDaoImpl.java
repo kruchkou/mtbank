@@ -1,7 +1,6 @@
 package by.bsuir.maksim.dabrabyt.dao.impl;
 
 import by.bsuir.maksim.dabrabyt.dao.DisabilityDao;
-import by.bsuir.maksim.dabrabyt.dao.DisabilityDao;
 import by.bsuir.maksim.dabrabyt.dao.connection.ConnectionPool;
 import by.bsuir.maksim.dabrabyt.dao.connection.impl.ConnectionPoolImpl;
 import by.bsuir.maksim.dabrabyt.dao.exception.DaoException;

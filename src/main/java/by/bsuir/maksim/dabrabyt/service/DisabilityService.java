@@ -1,7 +1,6 @@
 package by.bsuir.maksim.dabrabyt.service;
 
 import by.bsuir.maksim.dabrabyt.dao.model.entity.Disability;
-import by.bsuir.maksim.dabrabyt.dao.model.entity.FamilyStatus;
 import by.bsuir.maksim.dabrabyt.service.exception.ServiceException;
 
 import java.util.List;

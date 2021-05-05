@@ -1,7 +1,6 @@
 package by.bsuir.maksim.dabrabyt.service;
 
 import by.bsuir.maksim.dabrabyt.dao.model.entity.City;
-import by.bsuir.maksim.dabrabyt.dao.model.entity.Nationality;
 import by.bsuir.maksim.dabrabyt.service.exception.ServiceException;
 
 import java.util.List;

@@ -4,9 +4,9 @@ import by.bsuir.maksim.dabrabyt.controller.command.Command;
 import by.bsuir.maksim.dabrabyt.controller.command.impl.CreateClientCommand;
 import by.bsuir.maksim.dabrabyt.controller.command.impl.DeleteClientCommand;
 import by.bsuir.maksim.dabrabyt.controller.command.impl.UpdateClientCommand;
-import by.bsuir.maksim.dabrabyt.controller.command.impl.go.GoToCreateClientCommand;
 import by.bsuir.maksim.dabrabyt.controller.command.impl.go.GoToAllClientsCommand;
 import by.bsuir.maksim.dabrabyt.controller.command.impl.go.GoToClientCommand;
+import by.bsuir.maksim.dabrabyt.controller.command.impl.go.GoToCreateClientCommand;
 import by.bsuir.maksim.dabrabyt.controller.command.impl.go.GoToUpdateClientCommand;
 import lombok.Getter;
 
