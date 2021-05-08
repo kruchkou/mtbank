@@ -17,9 +17,9 @@ public class ClientServiceImpl implements ClientService {
     @Getter
     private static final ClientService instance = new ClientServiceImpl();
 
-    /*Экземпляр объекта ClientDAOImpl, который предоставляет методы для
+    /*Экземпляр объекта ClientDaoImpl, который предоставляет методы для
     взаимодействия с данными клиентов */
-    private static final ClientDao clientDAO = DaoProvider.getInstance().getClientDAO();
+    private static final ClientDao clientDao = DaoProvider.getInstance().getClientDao();
 
     //Сообщение, которое помещается в Exception в случае ошибки создания клиента
     private static final String MESSAGE_CLIENT_VALIDATION_EXCEPTION = "Client validation failed";
@@ -51,7 +51,7 @@ public class ClientServiceImpl implements ClientService {
             throw new ServiceException(MESSAGE_CLIENT_VALIDATION_EXCEPTION);
         }
         try {
-            clientDAO.create(client);
+            clientDao.create(client);
         } catch (DaoException e) {
             throw new ServiceException(MESSAGE_CREATE_EXCEPTION, e);
         }
@@ -61,10 +61,10 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public void delete(int id) throws ServiceException {
         try {
-            if (!clientDAO.get(id).isPresent()) {
+            if (clientDao.get(id).isEmpty()) {
                 throw new ServiceException(MESSAGE_GET_BY_ID_NOT_FOUND);
             }
-            clientDAO.delete(id);
+            clientDao.delete(id);
         } catch (DaoException e) {
             throw new ServiceException(MESSAGE_UPDATE_EXCEPTION, e);
         }
@@ -74,13 +74,13 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client update(Client client) throws ServiceException {
         try {
-            if (!clientDAO.get(client.getId()).isPresent()) {
+            if (clientDao.get(client.getId()).isEmpty()) {
                 throw new ServiceException(MESSAGE_GET_BY_ID_NOT_FOUND);
             }
             if (!ClientValidator.validate(client)) {
                 throw new ServiceException(MESSAGE_CLIENT_VALIDATION_EXCEPTION);
             }
-            return clientDAO.update(client);
+            return clientDao.update(client);
         } catch (DaoException e) {
             throw new ServiceException(MESSAGE_UPDATE_EXCEPTION, e);
         }
@@ -90,7 +90,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client get(int id) throws ServiceException {
         try {
-            return clientDAO.get(id).orElseThrow(() -> new ServiceException(MESSAGE_GET_BY_ID_NOT_FOUND));
+            return clientDao.get(id).orElseThrow(() -> new ServiceException(MESSAGE_GET_BY_ID_NOT_FOUND));
         } catch (DaoException e) {
             throw new ServiceException(MESSAGE_GET_EXCEPTION, e);
         }
@@ -100,7 +100,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<Client> getAll() throws ServiceException {
         try {
-            return clientDAO.getAll();
+            return clientDao.getAll();
         } catch (DaoException e) {
             throw new ServiceException(MESSAGE_GET_ALL_EXCEPTION, e);
         }

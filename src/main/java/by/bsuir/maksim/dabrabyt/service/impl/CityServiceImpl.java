@@ -16,7 +16,7 @@ public class CityServiceImpl implements CityService {
     @Getter
     private static final CityServiceImpl instance = new CityServiceImpl();
 
-    /*Экземпляр объекта CityDAOImpl, который предоставляет методы для
+    /*Экземпляр объекта CityDaoImpl, который предоставляет методы для
     взаимодействия с данными городов */
     private static final CityDao cityDao = DaoProvider.getInstance().getCityDao();
 

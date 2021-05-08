@@ -9,7 +9,7 @@ public final class DateValidatorValueProvider {
     }
 
     public static LocalDate getMinBirthdate() {
-        return LocalDate.now().minusYears(14);
+        return LocalDate.now().minusYears(18);
     }
 
 }

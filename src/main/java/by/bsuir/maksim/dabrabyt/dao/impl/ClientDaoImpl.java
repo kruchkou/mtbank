@@ -23,7 +23,7 @@ public class ClientDaoImpl implements ClientDao {
 
     //SQL Запрос на создание клиента
     private static final String CREATE_SQL = "INSERT INTO Clients(" +
-            "surname, Clients.name, patronymic, birthdate, sex, phone_home, phone_cell, email, act_city, act_address, salary, " +
+            "surname, name, patronymic, birthdate, sex, phone_home, phone_cell, email, act_city, act_address, salary, " +
             "passport_series, passport_number, passport_issued_by, passport_issued_date, passport_identity_number, " +
             "passport_city, nationality, passport_birthplace, family_status, disability, retiree) VALUES (" +
             "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -133,7 +133,7 @@ public class ClientDaoImpl implements ClientDao {
         ps.setInt(5, client.getSex().getId());
         setPsFieldWithNullCheck(ps, 6, client.getPhoneHome());
         setPsFieldWithNullCheck(ps, 7, client.getPhoneCell());
-        ps.setString(8, client.getEmail());
+        setPsFieldWithNullCheck(ps, 8, client.getEmail());
         ps.setInt(9, client.getActCity().getId());
         ps.setString(10, client.getActAddress());
         setPsFieldWithNullCheck(ps, 11, client.getSalary());
@@ -150,6 +150,7 @@ public class ClientDaoImpl implements ClientDao {
         ps.setBoolean(22, client.getRetiree());
     }
 
+    //Метод для правильной обработки полей, которые могут быть пустыми
     private static void setPsFieldWithNullCheck(PreparedStatement ps, int id, Integer value) throws SQLException {
         if (value == null) {
             ps.setNull(id, Types.INTEGER);
@@ -158,6 +159,7 @@ public class ClientDaoImpl implements ClientDao {
         }
     }
 
+    //Метод для правильной обработки полей, которые могут быть пустыми
     private static void setPsFieldWithNullCheck(PreparedStatement ps, int id, String value) throws SQLException {
         if (value == null) {
             ps.setNull(id, Types.VARCHAR);

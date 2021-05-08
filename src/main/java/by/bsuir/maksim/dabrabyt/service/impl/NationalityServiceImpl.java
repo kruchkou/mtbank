@@ -16,7 +16,7 @@ public class NationalityServiceImpl implements NationalityService {
     @Getter
     private static final NationalityServiceImpl instance = new NationalityServiceImpl();
 
-    /*Экземпляр объекта NationalityDAOImpl, который предоставляет методы для
+    /*Экземпляр объекта NationalityDaoImpl, который предоставляет методы для
     взаимодействия с данными национальностей */
     private static final NationalityDao nationalityDao = DaoProvider.getInstance().getNationalityDao();
 

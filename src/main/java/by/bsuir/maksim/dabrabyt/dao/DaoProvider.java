@@ -34,7 +34,7 @@ public class DaoProvider {
     @Getter
     private final DisabilityDao disabilityDao = DisabilityDaoImpl.getInstance();
 
-    /*Экземпляр объекта DisabilityDaoImpl, который предоставляет методы для
+    /*Экземпляр объекта SexDaoImpl, который предоставляет методы для
     взаимодействия с данными полов */
     @Getter
     private final SexDao sexDao = SexDaoImpl.getInstance();

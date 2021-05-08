@@ -16,7 +16,7 @@ public class FamilyStatusServiceImpl implements FamilyStatusService {
     @Getter
     private static final FamilyStatusServiceImpl instance = new FamilyStatusServiceImpl();
 
-    /*Экземпляр объекта FamilyStatusDAOImpl, который предоставляет методы для
+    /*Экземпляр объекта FamilyStatusDaoImpl, который предоставляет методы для
     взаимодействия с данными типов семейного положения */
     private static final FamilyStatusDao familyStatusDao = DaoProvider.getInstance().getFamilyStatusDao();
 

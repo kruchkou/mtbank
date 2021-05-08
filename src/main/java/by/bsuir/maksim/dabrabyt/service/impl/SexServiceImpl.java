@@ -16,7 +16,7 @@ public class SexServiceImpl implements SexService {
     @Getter
     private static final SexServiceImpl instance = new SexServiceImpl();
 
-    /*Экземпляр объекта SexDAOImpl, который предоставляет методы для
+    /*Экземпляр объекта SexDaoImpl, который предоставляет методы для
     взаимодействия с данными полов */
     private static final SexDao sexDao = DaoProvider.getInstance().getSexDao();
 

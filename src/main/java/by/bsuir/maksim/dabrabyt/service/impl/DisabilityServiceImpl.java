@@ -16,7 +16,7 @@ public class DisabilityServiceImpl implements DisabilityService {
     @Getter
     private static final DisabilityServiceImpl instance = new DisabilityServiceImpl();
 
-    /*Экземпляр объекта DisabilityDAOImpl, который предоставляет методы для
+    /*Экземпляр объекта DisabilityDaoImpl, который предоставляет методы для
     взаимодействия с данными типов инвалидности */
     private static final DisabilityDao disabilityDao = DaoProvider.getInstance().getDisabilityDao();
 

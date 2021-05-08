@@ -111,7 +111,7 @@
                         </div>
                         <div class="form-group">
                             <label for="passport_number">№ паспорта*</label>
-                            <input type="text" class="form-control form-control-sm" name="passport_number"
+                            <input type="number" class="form-control form-control-sm" name="passport_number"
                                    id="passport_number" required min="1">
                         </div>
                         <div class="form-group">

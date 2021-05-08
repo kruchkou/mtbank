@@ -37,7 +37,7 @@ public final class ClientValidator {
         Integer nationalityId = client.getNationality().getId();
         String passportBirthplace = client.getPassportBirthplace();
         Integer familyStatusId = client.getFamilyStatus().getId();
-        Integer disablityId = client.getDisability().getId();
+        Integer disabilityId = client.getDisability().getId();
         Boolean retiree = client.getRetiree();
 
         if (surname == null || !validateFio(surname)) {
@@ -49,26 +49,26 @@ public final class ClientValidator {
         if (patronymic == null || !validateFio(patronymic)) {
             return false;
         }
-        if (birthdate == null || !validatebirtDate(birthdate)) {
+        if (birthdate == null || !validateBirthDate(birthdate)) {
             return false;
         }
         if (sexId == null || !validateId(sexId)) {
             return false;
         }
-        if (phoneHome != null && !validatePhoneNumber(phoneHome)) {
-            //return false;
+        if (!phoneHome.equals("") && !validatePhoneNumber(phoneHome)) {
+            return false;
         }
-        if (phoneCell != null && !validatePhoneNumber(phoneCell)) {
-            //return false;
+        if (!phoneCell.equals("") && !validatePhoneNumber(phoneCell)) {
+            return false;
         }
-        if (email != null && !validateEmail(email)) {
+        if (!email.equals("") && !validateEmail(email)) {
             return false;
         }
         if (actualCityId == null || !validateId(actualCityId)) {
             return false;
         }
         if (salary != null && !validateSalary(salary)) {
-            //return false;
+            return false;
         }
         if (actAddress == null || !validateAddress(actAddress)) {
             return false;
@@ -100,7 +100,7 @@ public final class ClientValidator {
         if (familyStatusId == null || !validateId(familyStatusId)) {
             return false;
         }
-        if (disablityId == null || !validateId(disablityId)) {
+        if (disabilityId == null || !validateId(disabilityId)) {
             return false;
         }
         return retiree != null;
@@ -148,7 +148,7 @@ public final class ClientValidator {
 
     //Приватный метод для валидации даты выдачи паспорта
     private static boolean validatePassportIssuedDate(LocalDate passportIssuedDate) {
-        return LocalDate.EPOCH.isBefore(LocalDate.now().plusDays(1));
+        return passportIssuedDate.isBefore(LocalDate.now().plusDays(1));
     }
 
     //Приватный метод для валидации индентификационного номера
@@ -162,8 +162,8 @@ public final class ClientValidator {
     }
 
     //Приватный метод для валидации даты рождения
-    private static boolean validatebirtDate(LocalDate birthDate) {
-        return LocalDate.EPOCH.isBefore(DateValidatorValueProvider.getMinBirthdate());
+    private static boolean validateBirthDate(LocalDate birthDate) {
+        return birthDate.isBefore(DateValidatorValueProvider.getMinBirthdate());
     }
 
     //Приватный метод для валидации ID
