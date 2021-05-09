@@ -19,7 +19,7 @@
         <a class="navbar-brand" href="${pageContext.request.contextPath}">
             <img id="logo" src="${pageContext.request.contextPath}/img/logo.png">
         </a>
-        <p>Нам 20 лет!</p>
+        <p>Банк свежих решений</p>
     </nav>
 
     <div class="mt-4 container-fluid d-flex justify-content-center">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div id="content-body" class="container-fluid d-flex">
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="input-break color-primary mb-2">
                             <p class="ml-3">Личные данные</p>
                         </div>
@@ -90,13 +90,27 @@
                                    pattern="${regexp_email} value="${client.email}">
                         </div>
                         <div class="form-group">
-                            <label for="act_city">Город факт. проживания*</label>
-                            <select class="form-control form-control-sm" name="act_city" id="act_city" required>
+                            <label for="work_place">Место работы</label>
+                            <input type="text" class="form-control form-control-sm" name="work_place" id="work_place"
+                                   pattern="${regexp_work} value="${client.workPlace}">
+                        </div>
+                        <div class="form-group">
+                            <label for="work_position">Должность</label>
+                            <input type="text" class="form-control form-control-sm" name="work_position" id="work_position"
+                                   pattern="${regexp_work} value="${client.workPosition}">
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">Ежемесячный доход</label>
+                            <input type="number" class="form-control form-control-sm" name="salary" id="salary" min="1" value="${client.salary}">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Город факт. проживания*</label>
+                            <select class="form-control form-control-sm" name="city" id="city" required>
                                 <c:forEach items="${cityList}" var="city">
-                                    <c:if test="${client.actCity.id == city.id}">
+                                    <c:if test="${client.city.id == city.id}">
                                         <option value="${city.id}" selected>${city.name}</option>
                                     </c:if>
-                                    <c:if test="${client.actCity.id != city.id}">
+                                    <c:if test="${client.city.id != city.id}">
                                         <option value="${city.id}">${city.name}</option>
                                     </c:if>
                                 </c:forEach>
@@ -107,14 +121,8 @@
                             <input type="text" class="form-control form-control-sm" name="act_address" id="act_address"
                                    required pattern="${regexp_address}" value="${client.actAddress}">
                         </div>
-                        <div class="form-group">
-                            <label for="salary">Ежемесячный доход</label>
-                            <input type="number" class="form-control form-control-sm" name="salary" id="salary" min="1" value="${client.salary}">
-                        </div>
-                    </div>
-                    <div class="col-6">
                         <div class="input-break color-primary mb-2">
-                            <p>Паспортные данные</p>
+                            <p>Документы</p>
                         </div>
                         <div class="form-group">
                             <label for="passport_series">Серия паспорта*</label>
@@ -142,18 +150,9 @@
                                    id="passport_identity_number" required pattern="${regexp_passport_identity_number}" value="${client.passportIdentityNumber}">
                         </div>
                         <div class="form-group">
-                            <label for="passport_city">Город прописки*</label>
-                            <select class="form-control form-control-sm" name="passport_city" id="passport_city"
-                                    required>
-                                <c:forEach items="${cityList}" var="city">
-                                    <c:if test="${client.passportCity.id == city.id}">
-                                        <option value="${city.id}" selected>${city.name}</option>
-                                    </c:if>
-                                    <c:if test="${client.passportCity.id != city.id}">
-                                        <option value="${city.id}">${city.name}</option>
-                                    </c:if>
-                                </c:forEach>
-                            </select>
+                            <label for="passport_address">Город прописки*</label>
+                            <input type="text" class="form-control form-control-sm" name="passport_address"
+                                   id="passport_address" required pattern="${regexp_address}" value="${client.passportAddress}">
                         </div>
                         <div class="form-group">
                             <label for="nationality">Гражданство*</label>
@@ -223,7 +222,7 @@
         </div>
 
         <nav id="footer" class="navbar navbar-light bg-light justify-content-center text-muted">
-            <p>Дабрабыт. Все права защищены</p>
+            <p>МТБанк</p>
         </nav>
 
     </div>

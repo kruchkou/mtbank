@@ -19,7 +19,7 @@
         <a class="navbar-brand" href="${pageContext.request.contextPath}">
             <img id="logo" src="${pageContext.request.contextPath}/img/logo.png">
         </a>
-        <p>Нам 20 лет!</p>
+        <p>Банк свежих решений</p>
     </nav>
 
     <div class="mt-4 container-fluid d-flex justify-content-center">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div id="content-body" class="container-fluid d-flex">
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="input-break color-primary mb-2">
                             <p class="ml-3">Личные данные</p>
                         </div>
@@ -56,16 +56,6 @@
                             <input type="date" class="form-control form-control-sm" name="birthdate" id="birthdate"
                                    required max="${min_birthdate}">
                         </div>
-                        <div class="my-2 d-flex">
-                            <label class="mb-0 mr-4">Пол*</label>
-                            <c:forEach items="${sexList}" var="sex">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sex" id="sex_${sex.id}"
-                                           value="${sex.id}" required>
-                                    <label class="form-check-label" for="sex_${sex.id}">${sex.name}</label>
-                                </div>
-                            </c:forEach>
-                        </div>
                         <div class="form-group">
                             <label for="phone_home">Телефон дом.</label>
                             <input type="tel" class="form-control form-control-sm" name="phone_home" id="phone_home"
@@ -83,8 +73,22 @@
                                    pattern="${regexp_email}">
                         </div>
                         <div class="form-group">
-                            <label for="act_city">Город факт. проживания*</label>
-                            <select class="form-control form-control-sm" name="act_city" id="act_city" required>
+                            <label for="work_place">Место работы</label>
+                            <input type="text" class="form-control form-control-sm" name="work_place" id="work_place"
+                                   pattern="${regexp_work}">
+                        </div>
+                        <div class="form-group">
+                            <label for="work_position">Должность</label>
+                            <input type="text" class="form-control form-control-sm" name="work_position" id="work_position"
+                                   pattern="${regexp_work}">
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">Ежемесячный доход</label>
+                            <input type="number" class="form-control form-control-sm" name="salary" id="salary" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Город факт. проживания*</label>
+                            <select class="form-control form-control-sm" name="city" id="city" required>
                                 <c:forEach items="${cityList}" var="city">
                                     <option value="${city.id}">${city.name}</option>
                                 </c:forEach>
@@ -95,14 +99,8 @@
                             <input type="text" class="form-control form-control-sm" name="act_address" id="act_address"
                                    required pattern="${regexp_address}">
                         </div>
-                        <div class="form-group">
-                            <label for="salary">Ежемесячный доход</label>
-                            <input type="number" class="form-control form-control-sm" name="salary" id="salary" min="1">
-                        </div>
-                    </div>
-                    <div class="col-6">
                         <div class="input-break color-primary mb-2">
-                            <p>Паспортные данные</p>
+                            <p>Документы</p>
                         </div>
                         <div class="form-group">
                             <label for="passport_series">Серия паспорта*</label>
@@ -130,13 +128,9 @@
                                    id="passport_identity_number" required pattern="${regexp_passport_identity_number}">
                         </div>
                         <div class="form-group">
-                            <label for="passport_city">Город прописки*</label>
-                            <select class="form-control form-control-sm" name="passport_city" id="passport_city"
-                                    required>
-                                <c:forEach items="${cityList}" var="city">
-                                    <option value="${city.id}">${city.name}</option>
-                                </c:forEach>
-                            </select>
+                            <label for="passport_address">Адрес прописки*</label>
+                            <input type="text" class="form-control form-control-sm" name="passport_address"
+                                   id="passport_address" required pattern="${regexp_address}">
                         </div>
                         <div class="form-group">
                             <label for="nationality">Гражданство*</label>
@@ -186,7 +180,7 @@
         </div>
 
         <nav id="footer" class="navbar navbar-light bg-light justify-content-center text-muted">
-            <p>Дабрабыт. Все права защищены</p>
+            <p>МТБанк</p>
         </nav>
 
     </div>

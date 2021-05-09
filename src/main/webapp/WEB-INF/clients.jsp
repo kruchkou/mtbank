@@ -17,7 +17,7 @@
 <div id="wrapper">
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="${pageContext.request.contextPath}"><img id="logo" src="${pageContext.request.contextPath}/img/logo.png"></a>
-        <p>Нам 20 лет!</p>
+        <p>Банк свежих решений</p>
     </nav>
 
     <div class="mt-4 container-fluid d-flex justify-content-center">
@@ -25,7 +25,7 @@
             <div id="content-header" class="my-3">
                 <div class="d-flex justify-content-between align-items-center">
                     <h4>СПИСОК КЛИЕНТОВ</h4>
-                    <a href="Controller?command=go_to_create_client_command" class="color-primary btn">Добавить клиента</a>
+                    <a href="Controller?command=go_to_create_client_command" class="color-primary btn"><img src="img/add.svg"></a>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
         </div>
 
         <nav id="footer" class="navbar navbar-light bg-light justify-content-center text-muted">
-            <p>Дабрабыт. Все права защищены</p>
+            <p>МТБанк</p>
         </nav>
     </div>
 </div>
